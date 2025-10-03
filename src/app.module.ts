@@ -12,6 +12,9 @@ import { SchedulesModule } from './schedules/schedules.module';
       url: process.env.DATABASE_URL,
       entities: [User, Schedule],
       synchronize: true, // dev only!
+      ssl: {
+        rejectUnauthorized: false, // for Render
+      },
     }),
     AuthModule,
     SchedulesModule,
